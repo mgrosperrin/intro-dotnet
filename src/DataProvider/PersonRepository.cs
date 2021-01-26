@@ -7,9 +7,11 @@ namespace DataProvider
 {
     public class PersonRepository : IPersonRepository
     {
-        private static readonly Fuzzer _fuzzer = new Fuzzer();
+        private static readonly Fuzzer _fuzzer;
         static PersonRepository()
         {
+            Fuzzer.Log = Console.WriteLine;
+            _fuzzer = new Fuzzer()
             for (var i = 0; i < 25; i++)
             {
                 var fuzzerPerson = _fuzzer.GeneratePerson();
