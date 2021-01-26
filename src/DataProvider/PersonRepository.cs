@@ -11,7 +11,7 @@ namespace DataProvider
         static PersonRepository()
         {
             Fuzzer.Log = Console.WriteLine;
-            _fuzzer = new Fuzzer()
+            _fuzzer = new Fuzzer();
             for (var i = 0; i < 25; i++)
             {
                 var fuzzerPerson = _fuzzer.GeneratePerson();
