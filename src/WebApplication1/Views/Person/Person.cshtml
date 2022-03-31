@@ -1,5 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-<h3>@ViewBag.Test</h3>
+ 
+@foreach(var item in ViewBag.Test){
+        <p>@Html.DisplayNameFor(item => item.firstName)</p>
+}

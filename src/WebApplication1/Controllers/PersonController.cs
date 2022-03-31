@@ -5,16 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using DataProvider;
 
 namespace WebApplication1.Controllers
 {
     public class PersonController : Controller
     {
-        private repo = new PersonRepository();
-        
+        private PersonRepository repo = new PersonRepository();
+
         public ActionResult Person()
         {
-            ViewBag.Test = "toto";
+            IEnumerable<Person> people = repo.GetAll();
+            ViewBag.Test = people;
             return View();
         }
 
